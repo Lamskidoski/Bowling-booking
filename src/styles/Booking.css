@@ -1,0 +1,82 @@
+.booking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdf4f1;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .booking-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #a0a0a0;
+  }
+  
+  .logo img {
+    width: 100px;
+    margin: 20px 0;
+  }
+  
+  h2 {
+    color: #d63031;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .booking-section {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+  }
+  
+  label {
+    color: #6c5ce7;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .booking-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dfe6e9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .fully-booked-message {
+    color: #d63031;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .shoes-section {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+  
+  .booking-button {
+    background-color: #d63031;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .booking-button:hover {
+    background-color: #e74c3c;
+  }
+  
