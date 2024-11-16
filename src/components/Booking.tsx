@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importera useNavigate
 import '../styles/Booking.css';
 
 const Booking: React.FC = () => {
@@ -6,6 +7,8 @@ const Booking: React.FC = () => {
   const [time, setTime] = useState<string>('21.00');
   const [numPersons, setNumPersons] = useState<number>(3);
   const [isFullyBooked, setIsFullyBooked] = useState<boolean>(false);
+
+  const navigate = useNavigate(); // Initialisera navigering
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDate(e.target.value);
@@ -30,14 +33,25 @@ const Booking: React.FC = () => {
     }
   };
 
+  const handleMenuClick = () => {
+    navigate('/navbar'); // Navigera till navbar-sidan
+  };
+
   return (
     <div className="booking-container">
-      <p className="booking-header">booking</p>
+      {/* Navbar */}
+      <div className="navbar">
+        <h1 onClick={handleMenuClick} className="navbar-title">
+          ☰
+        </h1>
+      </div>
+
       <div className="logo">
-        {/* Lägg till logotypen här */}
         <img src="./src/svg/bowling-logo.svg" alt="Strajk Bowling Logo" />
       </div>
-      <h2>Booking</h2>
+      <h2 className="booking-header">Booking</h2>
+      
+      <p className="booking-section-header">WHEN, WHAT & WHO</p>
 
       <div className="booking-section">
         <label>Date</label>
@@ -55,15 +69,6 @@ const Booking: React.FC = () => {
           onChange={handleTimeChange}
           className="booking-input"
         />
-      </div>
-
-      {isFullyBooked && (
-        <div className="fully-booked-message">
-          No lane available at given date or time. Please try another date or time.
-        </div>
-      )}
-
-      <div className="booking-section">
         <label>Number of Awesome Bowlers</label>
         <input
           type="number"
@@ -72,14 +77,17 @@ const Booking: React.FC = () => {
           className="booking-input"
           min={1}
         />
-      </div>
-
-      <div className="booking-section">
         <label>Number of Lanes</label>
         <input type="text" value="1 lane" readOnly className="booking-input" />
       </div>
 
-      <h3>Shoes</h3>
+      {isFullyBooked && (
+        <div className="fully-booked-message">
+          No lane available at given date or time. Please try another date or time.
+        </div>
+      )}
+
+      <h3 className="shoes">Shoes</h3>
       <div className="shoes-section">
         {Array.from({ length: numPersons }, (_, index) => (
           <input

@@ -1,0 +1,29 @@
+.navbar-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1a1a1a; /* Mörk bakgrund */
+    color: #d63031; /* Röd textfärg */
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-page h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-page h1:hover {
+    color: #e74c3c; /* Ljusare röd vid hover */
+  }
+  
+  .logo img {
+    width: 120px;
+    margin: 20px 0;
+  }

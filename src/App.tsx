@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import LoadingScreen from './components/LoadingScreen';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Booking from './components/Booking';
+import Navbar from './components/NavBar';
 
 const App: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulerar en laddningstid på 3 sekunder
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="App">
-      {isLoading ? <LoadingScreen /> : <Booking />}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Booking />} />
+        <Route path="/navbar" element={<Navbar />} />
+      </Routes>
+    </Router>
   );
 };
 
